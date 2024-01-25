@@ -23,7 +23,6 @@ body {
 .pokedex-info {
   width: 56%;
   height: 40rem;
-  border: 2px solid black; /*   Sò para testar o tamanho*/
   display: flex;
   justify-content: space-between;
   align-items: end;
