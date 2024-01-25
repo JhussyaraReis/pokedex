@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../imgs/pokedex.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokedex-info {
+  width: 56%;
+  height: 40rem;
+  /* border: 2px solid black;  Sò para testar o tamanho*/
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.content-lista-pokemons {
+  width: 41.5%;
+  height: 33rem;
+  background-color: #f3998e;
+  border-radius: 10px;
+  box-shadow: 3px 3px 2px rgba(45, 44, 44, 0.782);
+}
