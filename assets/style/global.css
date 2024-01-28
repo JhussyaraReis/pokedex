@@ -6,24 +6,21 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  width: 100vw;
   height: 100vh;
-  background-image: url(../imgs/pokedex.png);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .pokedex-info {
-  width: 56%;
-  height: 40rem;
+  width: 50%;
+  height: 80vh;
+  padding: 5px;
   display: flex;
-  justify-content: space-between;
-  align-items: end;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #b43957;
+  border-radius: 10px;
+  box-shadow: 3px 3px 2px rgba(45, 44, 44, 0.782);
 }
