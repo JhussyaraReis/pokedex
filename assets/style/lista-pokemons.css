@@ -29,10 +29,17 @@ ol.pokemons li {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 ol.pokemons li:hover {
   background-color: #e9aeae;
+}
+
+li div.ordem-lista {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 ol.pokemons li img {
