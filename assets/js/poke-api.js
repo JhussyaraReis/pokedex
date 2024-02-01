@@ -1,7 +1,7 @@
-const offset = 0;
-const limit = 6;
+let offset = 0;
+let limit = 6;
 
-const url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`;
+let url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`;
 
 function converterPokemon(pokeDetalhado) {
   const pokemon = new Pokemon();
@@ -11,27 +11,31 @@ function converterPokemon(pokeDetalhado) {
   const [tipoPrincipal] = tipos;
   pokemon.tipoPrincipal = tipoPrincipal;
   pokemon.altura = pokeDetalhado.height;
-  pokemon.largura = pokeDetalhado.width;
-  pokemon.peso = pokeDetalhado.Weight;
-  pokemon.categoria = pokeDetalhado.order;
+  pokemon.peso = pokeDetalhado.weight;
+  const habilidades = pokeDetalhado.abilities.map((habi) => habi.ability.name);
+  pokemon.habilidades = habilidades;
   pokemon.tipos = tipos;
   pokemon.img1 = pokeDetalhado.sprites.other.dream_world.front_default;
   return pokemon;
 }
 
-fetch(url)
-  .then((response) => response.json())
-  .then((resJson) => {
-    const resultados = resJson.results;
-    resultados.forEach((elemento) => {
-      fetch(elemento.url)
-        .then((response) => response.json())
-        .then((pokeDetalhado) => {
-          criarCardPokemons(pokeDetalhado);
-          console.log(converterPokemon(pokeDetalhado));
-        });
+function pegarPokemons(offset, limit, url) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((resJson) => {
+      const resultados = resJson.results;
+      resultados.forEach((elemento) => {
+        fetch(elemento.url)
+          .then((response) => response.json())
+          .then((pokeDetalhado) => {
+            criarCardPokemons(pokeDetalhado);
+            // console.log(pokeDetalhado);
+          });
+      });
+    })
+    .catch((err) => {
+      console.log(err);
     });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+}
+
+pegarPokemons(offset, limit, url);

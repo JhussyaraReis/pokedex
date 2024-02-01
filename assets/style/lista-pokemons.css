@@ -60,6 +60,7 @@ div.btns {
   font-weight: bolder;
   background-color: #710022;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .btn:hover {
