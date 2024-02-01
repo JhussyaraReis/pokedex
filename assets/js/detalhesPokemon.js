@@ -25,18 +25,17 @@ function detalharPokemon(target) {
   imgPokemonDiv.appendChild(imgPokemon);
   id.innerHTML += pokemons[target.className - 1].ordem;
   nome.innerHTML += pokemons[target.className - 1].nome;
+  altura.innerHTML += pokemons[target.className - 1].altura;
+  peso.innerHTML += pokemons[target.className - 1].peso;
+  habilidades.innerHTML += `${
+    pokemons[target.className - 1].habilidades[0]
+  } | ${pokemons[target.className - 1].habilidades[1]}`;
   tipo1.innerHTML += pokemons[target.className - 1].tipos[0];
   if (pokemons[target.className - 1].tipos[1] !== undefined) {
     tipo2.innerHTML += pokemons[target.className - 1].tipos[1];
   } else {
     tipo2.innerHTML += "-------";
   }
-
-  altura.innerHTML += pokemons[target.className - 1].altura;
-  peso.innerHTML += pokemons[target.className - 1].peso;
-  habilidades.innerHTML += `${
-    pokemons[target.className - 1].habilidades[0]
-  } | ${pokemons[target.className - 1].habilidades[1]}`;
 }
 
 document.addEventListener("click", (e) => {

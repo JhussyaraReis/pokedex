@@ -18,6 +18,7 @@ function converterPokemon(pokeDetalhado) {
   pokemon.habilidades = habilidades;
   pokemon.tipos = tipos;
   pokemon.img1 = pokeDetalhado.sprites.other.dream_world.front_default;
+
   return pokemon;
 }
 

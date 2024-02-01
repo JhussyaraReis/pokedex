@@ -4,6 +4,7 @@ const btnPrev = document.querySelector(".prev");
 
 function criarCardPokemons(pokeDetalhado) {
   const elementoLista = document.createElement("li");
+  elementoLista.id = `${pokemons[pokeDetalhado.id]}`;
   elementoLista.classList.add(`${pokeDetalhado.id}`);
   const ordemPokemon = document.createElement("span");
   const nomePokemon = document.createElement("span");
