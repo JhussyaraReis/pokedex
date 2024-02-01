@@ -1,11 +1,48 @@
 .descricao-pokemons {
   width: 350px;
   height: 523px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
+  padding: 20px;
   background-color: #e4c2c2;
   border-radius: 10px;
   box-shadow: 3px 3px 2px rgba(45, 44, 44, 0.782);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 35px;
+}
+
+.descricao-pokemons h3 {
+  text-align: center;
+}
+
+.descricao-pokemons div.imgPokemon {
+  background-color: #9d4b60;
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+  border: 15px solid #efd6d6;
+  box-shadow: 3px 3px 2px rgba(45, 44, 44, 0.782);
+}
+
+div.imgPokemon img {
+  width: 100%;
+  height: 100%;
+}
+
+.detalhes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.detalhes span {
+  color: rgb(72, 70, 68);
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.detalhes div {
+  display: flex;
+  justify-content: space-between;
 }

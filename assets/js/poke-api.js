@@ -3,10 +3,12 @@ let limit = 6;
 
 let url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`;
 
+const pokemons = [];
+
 function converterPokemon(pokeDetalhado) {
   const pokemon = new Pokemon();
   pokemon.nome = pokeDetalhado.name;
-  pokemon.ordem = pokeDetalhado.order;
+  pokemon.ordem = pokeDetalhado.id;
   const tipos = pokeDetalhado.types.map((typesSlot) => typesSlot.type.name);
   const [tipoPrincipal] = tipos;
   pokemon.tipoPrincipal = tipoPrincipal;
@@ -19,7 +21,7 @@ function converterPokemon(pokeDetalhado) {
   return pokemon;
 }
 
-function pegarPokemons(offset, limit, url) {
+function pegarPokemons(url) {
   fetch(url)
     .then((response) => response.json())
     .then((resJson) => {
@@ -28,8 +30,8 @@ function pegarPokemons(offset, limit, url) {
         fetch(elemento.url)
           .then((response) => response.json())
           .then((pokeDetalhado) => {
+            pokemons.push(converterPokemon(pokeDetalhado));
             criarCardPokemons(pokeDetalhado);
-            // console.log(pokeDetalhado);
           });
       });
     })
@@ -38,4 +40,4 @@ function pegarPokemons(offset, limit, url) {
     });
 }
 
-pegarPokemons(offset, limit, url);
+pegarPokemons(url);

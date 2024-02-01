@@ -4,6 +4,7 @@ const btnPrev = document.querySelector(".prev");
 
 function criarCardPokemons(pokeDetalhado) {
   const elementoLista = document.createElement("li");
+  elementoLista.classList.add(`${pokeDetalhado.id}`);
   const ordemPokemon = document.createElement("span");
   const nomePokemon = document.createElement("span");
   const imgPoke = document.createElement("img");
@@ -25,25 +26,24 @@ btnNext.addEventListener("click", () => {
   document.querySelectorAll("li").forEach((el) => {
     el.remove();
   });
-  offset += 5;
+  offset += 6;
   btnPrev.disabled = false;
   url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${6}`;
-  pegarPokemons(offset, limit, url);
+  pegarPokemons(url);
 });
 
 btnPrev.addEventListener("click", () => {
   document.querySelectorAll("li").forEach((el) => {
     el.remove();
   });
-  console.log(offset);
-  if (offset !== 5) {
-    offset -= 5;
+  if (offset !== 6) {
+    offset -= 6;
     url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${6}`;
-    pegarPokemons(offset, limit, url);
+    pegarPokemons(url);
   } else {
-    offset -= 5;
+    offset -= 6;
     url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${6}`;
-    pegarPokemons(offset, limit, url);
+    pegarPokemons(url);
     btnPrev.disabled = true;
   }
 });
