@@ -32,6 +32,9 @@ function pegarPokemons(url) {
           .then((response) => response.json())
           .then((pokeDetalhado) => {
             pokemons.push(converterPokemon(pokeDetalhado));
+            pokemons.sort(function (a, b) {
+              return a.ordem - b.ordem;
+            });
             criarCardPokemons(pokeDetalhado);
           });
       });
